@@ -1,24 +1,33 @@
 <!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PREMIUM VIRTUAL CARDS - WORLDWIDE</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif}
 body{background:#0a1026;color:#fff}
-.header{background:#070b18;padding:14px 10px;text-align:center;border-bottom:2px solid #FFD700;position:sticky;top:0;z-index:99}
-.header h1{color:#FFD700;font-size:18px}
-.header p{color:#FFD700;font-size:13px;margin-top:4px}
-.topbar{display:flex;justify-content:space-between;padding:10px 12px;background:#050814;font-size:13px}
+.header{background:#070b18;padding:12px;text-align:center;border-bottom:2px solid #FFD700;position:sticky;top:0;z-index:99}
+.header h1{color:#FFD700;font-size:17px;letter-spacing:.5px}
+.header p{color:#FFD700;font-size:12px;margin-top:2px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#050814;border-bottom:1px solid #1a2747}
 .gold{color:#FFD700;font-weight:800}
-.btn-gold{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;border:none;padding:6px 12px;border-radius:20px;font-weight:800;font-size:12px}
+.btn-gold{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;border:none;padding:8px 14px;border-radius:20px;font-weight:800;font-size:12px}
 .wrap{overflow-x:auto}
-.row{width:100%;min-width:700px;display:grid;grid-template-columns:120px 80px 80px 60px 110px;align-items:center;padding:14px 10px;border-bottom:1px solid #1a2747;background:#101a36}
-.row:nth-child(even){background:#0f1830}
-.flag{font-size:28px;text-align:center}
-.price{color:#00ff87;font-weight:800;font-size:20px;text-align:center}
-.cart{background:#1a2747;border:1px solid #2a3a66;color:#fff;padding:10px;border-radius:8px;font-size:18px}
-.buy{background:#2563eb;color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:800;font-size:13px}
-.type{font-size:12px}.type b{display:block;color:#fff}
-.badge{font-size:8px;background:#FFD700;color:#000;padding:2px 5px;border-radius:3px}
+.row{min-width:760px;display:grid;grid-template-columns:40px 90px 130px 140px 50px 70px 60px 110px;align-items:center;padding:12px 6px;border-bottom:1px solid #152040;background:#0f1935}
+.row:nth-child(even){background:#111d3d}
+.chk{width:18px;height:18px;border-radius:3px;border:2px solid #fff;background:#fff}
+.cardbox{display:flex;flex-direction:column;align-items:center;gap:4px}
+.cardlogo{width:70px;height:44px;background:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:#1a1f9e;letter-spacing:-.5px}
+.cardlogo.mc{color:#000;font-size:9px;line-height:1}
+.bank{background:#1a1a1a;color:#fff;font-size:9px;padding:2px 8px;border-radius:10px;border:1px solid #333}
+.debit{line-height:1.1}
+.debit b{font-size:13px;display:block}
+.debit span{font-size:12px;color:#cbd5e1}
+.info{font-size:12px;line-height:1.25;color:#cbd5e1}
+.info b{color:#fff}
+.refund{color:#00ff88;font-size:11px}
+.flag{font-size:26px;text-align:center}
+.price{color:#00ff88;font-weight:800;font-size:18px;text-align:center}
+.cart{background:#1e2a4a;border:1px solid #2a3a66;color:#fff;width:42px;height:38px;border-radius:8px}
+.buy{background:#2563eb;color:#fff;border:none;padding:9px 14px;border-radius:8px;font-weight:800;font-size:12px;white-space:nowrap}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;justify-content:center;align-items:center;z-index:999;padding:12px}
 .modal.on{display:flex}
 .box{background:#111a33;border:2px solid #FFD700;border-radius:14px;padding:16px;max-width:360px;width:100%}
@@ -27,19 +36,25 @@ body{background:#0a1026;color:#fff}
 </style></head><body>
 <div class="header"><h1>PREMIUM VIRTUAL CARDS - WORLDWIDE</h1><p>👉 Swipe Left-Right to see BUY NOW 👈</p></div>
 <div class="topbar"><div>Balance: <b id="bal" class="gold">$2</b></div><button class="btn-gold" onclick="openF()">Add Funds</button></div>
-<div class="wrap"><div class="list" id="list"></div></div>
-<div class="modal" id="buyM"><div class="box"><h3 style="color:#FFD700;text-align:center">Buy Card</h3><p id="sel" style="text-align:center;font-size:13px;margin:6px 0"></p><div class="ubl"><b>UBL:</b> 1224390615808<br><b>Title:</b> Abdul Rehman<br>Amount: <b id="amt" class="gold"></b></div><input id="trx" placeholder="Transaction ID"><input id="gmail" placeholder="Your Gmail"><button class="btn-gold" style="width:100%;padding:12px;margin-top:8px" onclick="pay()">Confirm & WhatsApp</button><button onclick="closeM('buyM')" style="width:100%;padding:8px;background:#222;color:#fff;border:1px solid #333;border-radius:8px;margin-top:6px">Close</button></div></div>
-<div class="modal" id="fundM"><div class="box"><h3 style="color:#FFD700;text-align:center">Add Funds</h3><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0"><button class="btn-gold" onclick="setF(2)">$2</button><button class="btn-gold" onclick="setF(10)">$10</button><button class="btn-gold" onclick="setF(20)">$20</button><button class="btn-gold" onclick="setF(30)">$30</button><button class="btn-gold" onclick="setF(40)">$40</button><button class="btn-gold" onclick="setF(50)">$50</button><button class="btn-gold" onclick="setF(100)">$100</button><button class="btn-gold" onclick="setF(200)">$200</button></div><input type="number" id="cFund" placeholder="Custom $"><div class="ubl">Selected: <b id="fAmt" class="gold">$0</b><br>UBL: 1224390615808 Abdul Rehman</div><input id="f_trx" placeholder="Transaction ID"><input id="f_gmail" placeholder="Your Gmail"><button class="btn-gold" style="width:100%;padding:12px" onclick="fund()">Confirm Funds</button><button onclick="closeM('fundM')" style="width:100%;padding:8px;background:#222;color:#fff;border:1px solid #333;border-radius:8px;margin-top:6px">Close</button></div></div>
+<div class="wrap"><div id="list"></div></div>
+<div class="modal" id="buyM"><div class="box"><h3 style="color:#FFD700;text-align:center">Buy Card</h3><p id="sel" style="text-align:center;font-size:13px"></p><div class="ubl">UBL: 1224390615808 Abdul Rehman<br>Amount: <b id="amt" class="gold"></b></div><input id="trx" placeholder="Transaction ID"><input id="gmail" placeholder="Your Gmail"><button class="btn-gold" style="width:100%;padding:12px;margin-top:8px" onclick="pay()">Confirm & WhatsApp</button><button onclick="closeM('buyM')" style="width:100%;padding:8px;background:#222;color:#fff;border:1px solid #333;border-radius:8px;margin-top:6px">Close</button></div></div>
+<div class="modal" id="fundM"><div class="box"><h3 style="color:#FFD700;text-align:center">Add Funds</h3><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0"><button class="btn-gold" onclick="setF(2)">$2</button><button class="btn-gold" onclick="setF(10)">$10</button><button class="btn-gold" onclick="setF(20)">$20</button><button class="btn-gold" onclick="setF(30)">$30</button><button class="btn-gold" onclick="setF(40)">$40</button><button class="btn-gold" onclick="setF(50)">$50</button><button class="btn-gold" onclick="setF(100)">$100</button><button class="btn-gold" onclick="setF(200)">$200</button></div><input type="number" id="cFund" placeholder="Custom $"><div class="ubl">Selected: <b id="fAmt" class="gold">$0</b></div><input id="f_trx" placeholder="Transaction ID"><input id="f_gmail" placeholder="Your Gmail"><button class="btn-gold" style="width:100%;padding:12px" onclick="fund()">Confirm</button><button onclick="closeM('fundM')" style="width:100%;padding:8px;background:#222;color:#fff;border:1px solid #333;border-radius:8px;margin-top:6px">Close</button></div></div>
 <script>
-const cards=[["US","🇺🇸","USA GOLD Prepaid",20],["US","🇺🇸","USA PLATINUM Prepaid",15],["US","🇺🇸","USA WORLD Prepaid",30],["SA","🇸🇦","Saudi GOLD Prepaid",25],["AE","🇦🇪","UAE GOLD Prepaid",25],["AE","🇦🇪","UAE WORLD Prepaid",30],["PK","🇵🇰","Pakistan GOLD Prepaid",10],["CA","🇨🇦","Canada GOLD Prepaid",20],["DE","🇩🇪","Germany GOLD Prepaid",20],["TR","🇹🇷","Turkey GOLD Prepaid",15],["QA","🇶🇦","Qatar GOLD Prepaid",15],["KW","🇰🇼","Kuwait GOLD Prepaid",15],["BH","🇧🇭","Bahrain GOLD Prepaid",15],["OM","🇴🇲","Oman GOLD Prepaid",15],["MY","🇲🇾","Malaysia GOLD Prepaid",15],["SG","🇸🇬","Singapore GOLD Prepaid",25],["AU","🇦🇺","Australia GOLD Prepaid",20]];
-let bal=2,cur="",curPrice=0,fundSel=0;
+const cards=[
+["VISA","CLASSIC","US","🇺🇸",20],["MasterCard","ENHANCED","US","🇺🇸",15],["MasterCard","ENHANCED","US","🇺🇸",30],["VISA","CLASSIC","SA","🇸🇦",25],["MasterCard","ENHANCED","SA","🇸🇦",25],["VISA","CLASSIC","AE","🇦🇪",25],["MasterCard","ENHANCED","AE","🇦🇪",30],["VISA","CLASSIC","PK","🇵🇰",10],["MasterCard","ENHANCED","CA","🇨🇦",20],["VISA","CLASSIC","DE","🇩🇪",20],["MasterCard","ENHANCED","TR","🇹🇷",15],["VISA","CLASSIC","QA","🇶🇦",15],["MasterCard","ENHANCED","KW","🇰🇼",15],["VISA","CLASSIC","BH","🇧🇭",15],["MasterCard","ENHANCED","OM","🇴🇲",15],
+];
+let bal=parseInt(localStorage.getItem('bal')||2),cur="",curP=0,fSel=0;
 document.getElementById('bal').innerText='$'+bal;
-let h="";cards.forEach(c=>{h+=`<div class="row"><div class="type"><b>${c[2]}</b><span class="badge">PREPAID</span> <span style="color:#00ff87">[Instant]</span></div><div class="flag">${c[1]}</div><div class="price">$${c[3]}</div><div style="text-align:center"><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('${c[2]}',${c[3]})">BUY NOW</button></div></div>`;});
+let h="";
+cards.forEach((c)=>{
+let logo=c[0]=="VISA"?`<div class="cardlogo">VISA</div>`:`<div class="cardlogo mc"><div><span style="display:inline-block;width:14px;height:14px;background:#eb001b;border-radius:50%"></span><span style="display:inline-block;width:14px;height:14px;background:#f79e1b;border-radius:50%;margin-left:-6px"></span><br>MasterCard</div></div>`;
+h+=`<div class="row"><div><div class="chk"></div></div><div class="cardbox">${logo}<div class="bank">BANK</div></div><div class="debit"><b>DEBIT</b><span>${c[1]}</span></div><div class="info"><b>${c[2]}-PREPAID</b><br>Address-5$<br><span class="refund">[Instant Delivery]</span></div><div class="flag">${c[3]}</div><div class="price">$${c[4]}</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('${c[2]} ${c[1]}',${c[4]})">BUY NOW</button></div></div>`;
+});
 document.getElementById('list').innerHTML=h;
-function openP(n,p){cur=n;curPrice=p;document.getElementById('sel').innerText=n;document.getElementById('amt').innerText='$'+p;document.getElementById('buyM').classList.add('on');}
+function openP(n,p){cur=n;curP=p;document.getElementById('sel').innerText=n;document.getElementById('amt').innerText='$'+p;document.getElementById('buyM').classList.add('on');}
 function openF(){document.getElementById('fundM').classList.add('on');}
 function closeM(id){document.getElementById(id).classList.remove('on');}
-function setF(v){fundSel=v;document.getElementById('fAmt').innerText='$'+v;document.getElementById('cFund').value=v;}
-function pay(){let t=document.getElementById('trx').value,g=document.getElementById('gmail').value;if(!t||!g){alert('TRX & Gmail');return;}if(bal<curPrice){alert('Balance low');openF();return;}bal-=curPrice;document.getElementById('bal').innerText='$'+bal;let msg=`ORDER: ${cur}%0ATrx:${t}%0AGmail:${g}`;window.open('https://wa.me/923012896632?text='+msg);closeM('buyM');}
-function fund(){let v=parseInt(document.getElementById('cFund').value||fundSel);if(!v){alert('Amount');return;}bal+=v;document.getElementById('bal').innerText='$'+bal;alert('Funds $'+v+' added');closeM('fundM');}
+function setF(v){fSel=v;document.getElementById('fAmt').innerText='$'+v;document.getElementById('cFund').value=v;}
+function pay(){let t=document.getElementById('trx').value,g=document.getElementById('gmail').value;if(!t||!g){alert('TRX & Gmail likho');return;}if(bal<curP){alert('Balance low');openF();return;}bal-=curP;localStorage.setItem('bal',bal);document.getElementById('bal').innerText='$'+bal;window.open('https://wa.me/923012896632?text=ORDER:'+cur+'%0ATrx:'+t+'%0AGmail:'+g);closeM('buyM');}
+function fund(){let v=parseInt(document.getElementById('cFund').value||fSel);if(!v){alert('Amount');return;}bal+=v;localStorage.setItem('bal',bal);document.getElementById('bal').innerText='$'+bal;alert('Added $'+v);closeM('fundM');}
 </script></body></html>
