@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="viewport" content="width=device-width, initial-scale=1"><title>CC Store PK</title></head>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CC Store PK</title>
+<style>
+.whatsapp-float {position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.5); z-index: 999;}
+</style>
+</head>
 <body style="margin:0; background:#080808; color:white; font-family:sans-serif;">
 <div style="text-align:center; padding:15px; background:black; border-bottom:1px solid #222;"><h2 style="margin:0;">CC STORE PK</h2></div>
-<div style="background:#111; margin:15px; padding:15px; border-radius:12px; text-align:center; border:1px solid #222;">
-<img src="1790640037797.jpg" style="width:100%; border-radius:10px;">
-<h3>Premium CC</h3>
-<p style="color:#00ff88; font-weight:bold; font-size:20px;">Price: $25</p>
-<button onclick="document.getElementById('pay').style.display='block'" style="width:100%; padding:14px; background:white; color:black; border:none; border-radius:8px; font-weight:bold;">ORDER NOW</button>
-<div id="pay" style="display:none; text-align:left; margin-top:15px;            
-            
+
+<div style="background:#111; margin:15px; padding:15px; border-radius:15px; text-align:center; border:1px solid #222;">
+<img src="1790640037797.jpg" style="width:100%; border-radius:12px;">
+<h3>Premium CC - Fresh & Valid</h3>
+<p style="color:#00ff88; font-weight:bold; font-size:22px;">Price: $25</p>
+<button id="shopBtn" onclick="document.getElementById('paymentBox').style.display='block'; this.style.display='none';" style="width:100%; padding:14px; background:white; color:black; border:none; border-radius:10px; font-weight:bold; font-size:16px;">SHOP NOW</button>
+
+<!-- STEP 1: PAYMENT DETAILS - ONLY UBL -->
+<div id="paymentBox" style="display:none; text-align:left; background:#000; padding:12px; border-radius:10px; border:1px solid #333; margin-top:15px;">
+<p style="color:#00ff88; font-weight:bold; text-align:center; font-size:18px;">PAYMENT DETAILS</p>
+<div style="background:#1a1a1a; padding:12px; border-radius:8px; line-height:1.8; font-size:15px;">
+Bank: <b>UBL</b><br>
+IBAN: <b>1224390615808</b><br>
+Title: <b>Abdul Rehman</b>
+</div>
+<p style="font-size:13px; color:#aaa; margin-top:10px;">Payment UBL me send karke Transaction ID likho aur Screenshot WhatsApp pe bhejo.</p>
+<input id="trxid" placeholder="Transaction ID likho" style="width:93%; padding:11px; margin-top:8px; background:#111; border:1px solid #333; color:white; border-radius:6px;">
+<button onclick="let t=document.getElementById('trxid').value; if(!t){alert('Pehle Transaction ID likho'); return;} document.getElementById('gmailBox').style.display='block'; document.getElementById('paymentBox').style.display='none';" style="width:100%; padding:13px; background:#25D366; color:white; border:none; border-radius:8px; font-weight:bold; margin-top:10px;">Payment Done - Next</button>
+</div>
+
+<!-- STEP 2: ONLY GMAIL -->
+<div id="gmailBox" style="display:none; text-align:left; background:#000; padding:12px; border-radius:10px; border:1px solid #333; margin-top:15px;">
+<p style="color:#00ff88; font-weight:bold; text-align:center;">FINAL STEP</p>
+<p style="font-size:13px; color:#aaa;">Jis Gmail par CC details chahiye wo likho.</p>
+<input id="gmail" placeholder="Apni Gmail likho" style="width:93%; padding:11px; margin:8px 0; background:#111; border:1px solid #333; color:white; border-radius:6px;">
+<button onclick="let t=document.getElementById('trxid').value; let g=document.getElementById('gmail').value; if(!g){alert('Gmail likho'); return;} window.open('https://wa.me/923012896632?text='+encodeURIComponent('NEW ORDER $25\nUBL IBAN: 1224390615808 Abdul Rehman\nTrx ID: '+t+'\nCustomer Gmail: '+g));" style="width:100%; padding:13px; background:white; color:black; border:none; border-radius:8px; font-weight:bold; margin-top:10px;">SEND TO WHATSAPP</button>
+</div>
+</div>
+
+<!-- SIDE WHATSAPP ICON -->
+<a href="https://wa.me/923012896632" class="whatsapp-float">💬</a>
+
+</body>
+</html>
