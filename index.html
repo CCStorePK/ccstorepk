@@ -1,129 +1,108 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>STORE PK</title>
+<title>Premium Cards PK - 10 Countries</title>
 <style>
-body{margin:0; background:#0d1425; color:white; font-family:Arial; }
-.top{padding:10px; background:#080c18; display:flex; justify-content:space-between; border-bottom:1px solid #1e2a4a;}
-.wrap{overflow-x:auto; -webkit-overflow-scrolling:touch;}
-.list{min-width:700px; background:#101a31; margin:8px; border-radius:10px; border:1px solid #1e2a4a;}
-.row{display:grid; grid-template-columns:40px 95px 130px 160px 60px 60px 60px 90px; align-items:center; padding:12px 8px; border-bottom:1px solid #1a2747; font-size:13px;}
-.visa-box{width:58px; height:36px; background:white; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#1A1F71; font-weight:900; font-style:italic; font-size:16px; letter-spacing:-1px;}
-.mc-box{width:58px; height:36px; background:white; border-radius:4px; display:flex; align-items:center; justify-content:center; position:relative;}
-.mc-c1{width:22px; height:22px; background:#EB001B; border-radius:50%; margin-right:-6px;}
-.mc-c2{width:22px; height:22px; background:#F79E1B; border-radius:50%; opacity:0.9;}
-.mc-txt{position:absolute; bottom:1px; font-size:7px; color:#000; font-weight:bold;}
-.badge{background:#111; border:1px solid #333; padding:2px 6px; border-radius:4px; font-size:9px; display:inline-block; margin-top:3px;}
-.price{color:#00ff88; font-weight:bold; font-size:16px;}
-.buy{background:#2563eb; color:white; border:none; padding:8px 12px; border-radius:6px; font-weight:bold; cursor:pointer;}
-.cart{background:transparent; border:1px solid #444; color:white; padding:6px 8px; border-radius:6px;}
-.hint{text-align:center; color:#f5c542; font-size:11px; margin:6px;}
-#pay{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:20px; box-sizing:border-box;}
-.box{background:#111a33; padding:20px; border-radius:12px; max-width:360px; margin:30px auto; border:1px solid #2a3a66;}
-input{width:93%; padding:11px; margin:7px 0; background:#080c18; border:1px solid #2a3a66; color:white; border-radius:7px;}
-.wa{position:fixed; bottom:18px; right:18px; background:#25D366; width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; text-decoration:none; z-index:999;}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif}
+body{background:#0a0a0a;color:#fff;min-height:100vh}
+.header{background:linear-gradient(135deg,#111 0%,#1a1a1a 100%);padding:15px 20px;border-bottom:2px solid #FFD700;position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:22px;font-weight:800;color:#FFD700}
+.wallet{display:flex;gap:10px;align-items:center;background:#222;padding:8px 14px;border-radius:30px;border:1px solid #333}
+.bal{color:#FFD700;font-weight:700}
+.btn-gold{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;border:none;padding:8px 16px;border-radius:20px;font-weight:700;cursor:pointer}
+.search-bar{padding:20px;display:flex;gap:10px}
+.search-bar input{flex:1;padding:12px 15px;border-radius:10px;border:1px solid #333;background:#1a1a1a;color:#fff}
+.filter{padding:0 20px 10px;display:flex;gap:8px;flex-wrap:wrap}
+.f-btn{background:#1a1a1a;border:1px solid #333;color:#aaa;padding:6px 14px;border-radius:20px;cursor:pointer}
+.f-btn.active{background:#FFD700;color:#000;border-color:#FFD700;font-weight:700}
+.grid{padding:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:linear-gradient(145deg,#1e1e1e,#151515);border:1px solid #2a2a2a;border-radius:16px;padding:16px}
+.card:hover{border-color:#FFD700;transform:translateY(-3px)}
+.c-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.flag{font-size:28px}
+.brand{font-size:12px;background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-weight:800}
+.c-country{font-weight:700;font-size:16px}
+.c-type{font-size:12px;color:#aaa;margin-bottom:10px}
+.c-price{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.price{font-size:22px;font-weight:800;color:#FFD700}
+.buy{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;border:none;padding:8px 18px;border-radius:8px;font-weight:800;cursor:pointer}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;justify-content:center;align-items:center;z-index:200;padding:15px}
+.modal.active{display:flex}
+.m-box{background:#1a1a1a;border:1px solid #FFD700;border-radius:16px;padding:20px;width:100%;max-width:380px}
+.m-box h3{color:#FFD700;margin-bottom:10px;text-align:center}
+.m-box input{width:100%;padding:11px;margin:7px 0;border-radius:8px;border:1px solid #333;background:#111;color:#fff}
+.ubl{background:#111;border:1px dashed #FFD700;padding:10px;border-radius:8px;margin:10px 0;font-size:13px}
+.pay-btn{width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;border:none;padding:12px;border-radius:8px;font-weight:800;margin-top:10px;cursor:pointer}
+.close{width:100%;background:#222;color:#fff;border:1px solid #333;padding:10px;border-radius:8px;margin-top:8px;cursor:pointer}
 </style>
 </head>
 <body>
-<div class="top"><span>MENU</span><span>$ 2.01</span></div>
-<h3 style="text-align:center; color:#f5c542; font-size:15px; margin:10px 0;">PREMIUM VIRTUAL CARDS - WORLDWIDE</h3>
-<div class="hint">👉 Swipe Left-Right to see BUY NOW 👈</div>
-
-<div class="wrap"><div class="list">
-
-<div class="row">
-<input type="checkbox">
-<div><div class="visa-box">VISA</div>410039<br><span class="badge">BANK</span></div>
-<div><b>DEBIT</b><br>CLASSIC</div>
-<div>09/2029<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
-<div style="font-size:24px;">🇺🇸</div>
-<div class="price">$20</div>
-<div><button class="cart">🛒</button></div>
-<div><button class="buy" onclick="openP('Visa Classic US $20')">BUY NOW</button></div>
+<div class="header">
+<div class="logo">PREMIUM CARDS PK</div>
+<div class="wallet">Balance: <span class="bal" id="balance">$0</span> <button class="btn-gold" onclick="openAddFunds()">Add Funds</button></div>
 </div>
-
-<div class="row">
-<input type="checkbox">
-<div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>514783<br><span class="badge">BANK</span></div>
-<div><b>DEBIT</b><br>ENHANCED</div>
-<div>09/2031<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
-<div style="font-size:24px;">🇺🇸</div>
-<div class="price">$15</div>
-<div><button class="cart">🛒</button></div>
-<div><button class="buy" onclick="openP('MasterCard US $15')">BUY NOW</button></div>
-</div>
-
-<div class="row">
-<input type="checkbox">
-<div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>517542<br><span class="badge">BANK</span></div>
-<div><b>DEBIT</b><br>ENHANCED</div>
-<div>03/2029<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
-<div style="font-size:24px;">🇺🇸</div>
-<div class="price">$30</div>
-<div><button class="cart">🛒</button></div>
-<div><button class="buy" onclick="openP('MasterCard US $30')">BUY NOW</button></div>
-</div>
-
-<div class="row">
-<input type="checkbox">
-<div><div class="visa-box">VISA</div>432653<br><span class="badge">BANK</span></div>
-<div><b>DEBIT</b><br>CLASSIC</div>
-<div>04/2030<br>0926-SA<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
-<div style="font-size:24px;">🇸🇦</div>
-<div class="price">$25</div>
-<div><button class="cart">🛒</button></div>
-<div><button class="buy" onclick="openP('Visa SA $25')">BUY NOW</button></div>
-</div>
-
-<div class="row">
-<input type="checkbox">
-<div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>514783<br><span class="badge">BANK</span></div>
-<div><b>DEBIT</b><br>ENHANCED</div>
-<div>12/2027<br>0926-SA<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
-<div style="font-size:24px;">🇸🇦</div>
-<div class="price">$25</div>
-<div><button class="cart">🛒</button></div>
-<div><button class="buy" onclick="openP('MasterCard SA $25')">BUY NOW</button></div>
-</div>
-
-<div class="row">
-<input type="checkbox">
-<div><div class="visa-box">VISA</div>434769<br><span class="badge">BANK</span></div>
-<div><b>DEBIT</b><br>CLASSIC</div>
-<div>01/2027<br>0926-AE<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
-<div style="font-size:24px;">🇦🇪</div>
-<div class="price">$25</div>
-<div><button class="cart">🛒</button></div>
-<div><button class="buy" onclick="openP('Visa UAE $25')">BUY NOW</button></div>
-</div>
-
-<div class="row">
-<input type="checkbox">
-<div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>510805<br><span class="badge">BANK</span></div>
-<div><b>DEBIT</b><br>ENHANCED</div>
-<div>12/2027<br>0926-AE<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
-<div style="font-size:24px;">🇦🇪</div>
-<div class="price">$30</div>
-<div><button class="cart">🛒</button></div>
-<div><button class="buy" onclick="openP('MasterCard UAE $30')">BUY NOW</button></div>
-</div>
-
-</div></div>
-
-<div id="pay"><div class="box">
-<h3 style="color:#00ff88; text-align:center;">PAYMENT</h3>
-<p id="sel" style="text-align:center; color:#f5c542;"></p>
-<div style="background:#080c18; padding:10px; border-radius:8px; border:1px solid #2a3a66;">Bank: <b>UBL</b><br>Acc: <b>1224390615808</b><br>Title: <b>Abdul Rehman</b></div>
-<input id="trxid" placeholder="Transaction ID"><input type="file"><input id="gmail" placeholder="Your Gmail">
-<button onclick="send()" style="width:100%; padding:12px; background:#25D366; color:white; border:none; border-radius:8px; font-weight:bold; margin-top:8px;">SEND TO WHATSAPP</button>
-<button onclick="document.getElementById('pay').style.display='none'" style="width:100%; padding:10px; background:transparent; color:#aaa; border:1px solid #333; border-radius:8px; margin-top:7px;">Close</button>
-</div></div>
-<a href="https://wa.me/923012896632" class="wa">💬</a>
+<div class="search-bar"><input type="text" id="search" placeholder="Search..." onkeyup="render()"></div>
+<div class="filter" id="filters"></div>
+<div class="grid" id="grid"></div>
+<div class="modal" id="buyModal"><div class="m-box"><h3 id="buyTitle">Buy Card</h3><p style="font-size:13px;color:#aaa;text-align:center" id="buyInfo"></p><div class="ubl"><b>UBL Bank:</b> 1224390615808<br><b>Title:</b> Abdul Rehman<br><b>Amount:</b> <span id="payAmount" style="color:#FFD700"></span></div><input type="text" id="trx" placeholder="Transaction ID"><input type="email" id="email" placeholder="Your Gmail"><input type="file"><button class="pay-btn" onclick="confirmPay()">Confirm</button><button class="close" onclick="closeModal('buyModal')">Cancel</button></div></div>
+<div class="modal" id="fundsModal"><div class="m-box"><h3>Add Funds</h3><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0"><button class="btn-gold" onclick="setFund(10)">$10</button><button class="btn-gold" onclick="setFund(20)">$20</button><button class="btn-gold" onclick="setFund(30)">$30</button><button class="btn-gold" onclick="setFund(50)">$50</button><button class="btn-gold" onclick="setFund(100)">$100</button><input type="number" id="customFund" placeholder="Custom"></div><div class="ubl"><b>UBL:</b> 1224390615808 - Abdul Rehman<br><b>Selected:</b> <span id="fundAmount" style="color:#FFD700">$0</span></div><input type="text" id="f_trx" placeholder="Transaction ID"><input type="email" id="f_email" placeholder="Your Gmail"><button class="pay-btn" onclick="confirmFund()">Confirm</button><button class="close" onclick="closeModal('fundsModal')">Close</button></div></div>
 <script>
-let cur="";
-function openP(n){cur=n; document.getElementById('sel').innerText=n; document.getElementById('pay').style.display='block';}
-function send(){let t=document.getElementById('trxid').value; let g=document.getElementById('gmail').value; if(!t||!g){alert('Enter TRX & Gmail'); return;} let m=`NEW ORDER\n${cur}\nUBL 1224390615808 Abdul Rehman\nTrx:${t}\nGmail:${g}`; window.open('https://wa.me/923012896632?text='+encodeURIComponent(m));}
+const cards=[
+{cc:"US",flag:"🇺🇸",name:"USA",type:"GOLD Prepaid Card",price:15},
+{cc:"US",flag:"🇺🇸",name:"USA",type:"PLATINUM Prepaid Card",price:25},
+{cc:"GB",flag:"🇬🇧",name:"UK",type:"WORLD Prepaid Card",price:20},
+{cc:"GB",flag:"🇬🇧",name:"UK",type:"WORLD ELITE Prepaid Card",price:35},
+{cc:"SA",flag:"🇸🇦",name:"Saudi Arabia",type:"GOLD Prepaid Card",price:15},
+{cc:"SA",flag:"🇸🇦",name:"Saudi Arabia",type:"PLATINUM Prepaid Card",price:30},
+{cc:"AE",flag:"🇦🇪",name:"UAE - Dubai",type:"GOLD Prepaid Card",price:15},
+{cc:"AE",flag:"🇦🇪",name:"UAE - Dubai",type:"WORLD ELITE Prepaid Card",price:50},
+{cc:"PK",flag:"🇵🇰",name:"Pakistan",type:"CLASSIC Prepaid Card",price:10},
+{cc:"PK",flag:"🇵🇰",name:"Pakistan",type:"GOLD Prepaid Card",price:20},
+{cc:"CA",flag:"🇨🇦",name:"Canada",type:"GOLD Prepaid Card",price:20},
+{cc:"CA",flag:"🇨🇦",name:"Canada",type:"PLATINUM Prepaid Card",price:35},
+{cc:"DE",flag:"🇩🇪",name:"Germany",type:"GOLD Prepaid Card",price:20},
+{cc:"DE",flag:"🇩🇪",name:"Germany",type:"WORLD Prepaid Card",price:40},
+{cc:"TR",flag:"🇹🇷",name:"Turkey",type:"GOLD Prepaid Card",price:15},
+{cc:"TR",flag:"🇹🇷",name:"Turkey",type:"PLATINUM Prepaid Card",price:25},
+{cc:"QA",flag:"🇶🇦",name:"Qatar",type:"GOLD Prepaid Card",price:15},
+{cc:"QA",flag:"🇶🇦",name:"Qatar",type:"PLATINUM Prepaid Card",price:30},
+{cc:"KW",flag:"🇰🇼",name:"Kuwait",type:"GOLD Prepaid Card",price:15},
+{cc:"KW",flag:"🇰🇼",name:"Kuwait",type:"WORLD ELITE Prepaid Card",price:45},
+];
+let bal=parseInt(localStorage.getItem('bal')||0);
+let selectedFund=0,selectedCard=null,activeCC="ALL";
+document.getElementById('balance').innerText='$'+bal;
+function initFilters(){
+const uniq=[...new Set(cards.map(c=>c.cc))];
+document.getElementById('filters').innerHTML='<button class="f-btn active" onclick="setCountry(\'ALL\',this)">ALL</button>'+uniq.map(cc=>`<button class="f-btn" onclick="setCountry('${cc}',this)">${cc}</button>`).join('');
+}
+function setCountry(cc,el){activeCC=cc;document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');render();}
+function render(){
+const q=document.getElementById('search').value.toLowerCase();
+let list=cards.filter(c=>{
+if(activeCC!=="ALL"&&c.cc!==activeCC)return false;
+if(q&&!(c.name.toLowerCase().includes(q)||c.type.toLowerCase().includes(q)))return false;
+return true;
+});
+document.getElementById('grid').innerHTML=list.map(c=>`<div class="card"><div class="c-top"><span class="flag">${c.flag}</span><span class="brand">PREPAID</span></div><div class="c-country">${c.name}</div><div class="c-type">${c.type}</div><div class="c-price"><span class="price">$${c.price}</span><button class="buy" onclick="buyCard('${c.cc}','${c.name}','${c.type}',${c.price})">BUY NOW</button></div></div>`).join('');
+}
+function buyCard(cc,name,type,price){selectedCard={cc,name,type,price};document.getElementById('buyTitle').innerText=name+' - '+type;document.getElementById('payAmount').innerText='$'+price;document.getElementById('buyModal').classList.add('active');}
+function openAddFunds(){document.getElementById('fundsModal').classList.add('active');}
+function setFund(v){selectedFund=v;document.getElementById('fundAmount').innerText='$'+v;document.getElementById('customFund').value=v;}
+function closeModal(id){document.getElementById(id).classList.remove('active');}
+function confirmPay(){
+const trx=document.getElementById('trx').value;
+const email=document.getElementById('email').value;
+if(!trx||!email){alert('Enter details');return;}
+if(bal<selectedCard.price){alert('Insufficient! Add Funds. Bal: $'+bal);return;}
+bal-=selectedCard.price;localStorage.setItem('bal',bal);document.getElementById('balance').innerText='$'+bal;
+alert('Order submitted for '+selectedCard.name);closeModal('buyModal');
+}
+function confirmFund(){
+let v=parseInt(document.getElementById('customFund').value||selectedFund);
+if(!v)return alert('Select amount');
+bal+=v;localStorage.setItem('bal',bal);document.getElementById('balance').innerText='$'+bal;
+alert('Funds $'+v+' added (demo)');closeModal('fundsModal');
+}
+initFilters();render();
 </script>
 </body>
 </html>
