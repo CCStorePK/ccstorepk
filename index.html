@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CC SHOP - PREMIUM STORE</title>
+<title>STORE PK - PREMIUM VIRTUAL CARDS</title>
 <style>
 body{margin:0; background:#0d1425; color:white; font-family:Arial;}
 .top{padding:12px 15px; background:#080c18; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e2a4a;}
@@ -31,34 +31,25 @@ input{width:100%; padding:12px; margin:8px 0; background:#080c18; border:1px sol
 </head>
 <body>
 
-<!-- PROFESSIONAL LOGIN -->
 <div id="loginGate">
-  <div style="background:#111a33; border:1px solid #2a3a66; border-radius:16px; width:100%; max-width:390px; padding:24px; text-align:center; box-shadow:0 10px 40px rgba(0,0,0,0.5);">
+  <div style="background:#111a33; border:1px solid #2a3a66; border-radius:16px; width:100%; max-width:390px; padding:24px; text-align:center;">
     <div style="font-size:32px;">🔐</div>
-    <h2 style="color:#f5c542; margin:5px 0 5px 0; letter-spacing:1px;">LOGIN REQUIRED</h2>
-    <p style="font-size:12px; color:#8aa0c8; margin-bottom:18px;">Please create an account to access the CC Store</p>
-    
+    <h2 style="color:#f5c542; margin:5px 0;">LOGIN REQUIRED</h2>
+    <p style="font-size:12px; color:#8aa0c8; margin-bottom:18px;">Please create an account to access the store</p>
     <div id="loginForm">
       <input id="l_gmail" type="email" placeholder="Enter Your Email">
       <input id="l_pass" type="password" placeholder="Create Password">
       <input id="l_cpass" type="password" placeholder="Confirm Password">
-      <button onclick="doLogin()" style="width:100%; padding:13px; background:#2563eb; color:white; border:none; border-radius:8px; font-weight:bold; margin-top:14px; cursor:pointer; font-size:14px;">Create Account & Login</button>
+      <button onclick="doLogin()" style="width:100%; padding:13px; background:#2563eb; color:white; border:none; border-radius:8px; font-weight:bold; margin-top:14px; cursor:pointer;">Create Account & Login</button>
       <p id="err" style="color:#ff4444; font-size:12px; margin-top:10px; display:none;"></p>
     </div>
-
-    <div id="verifying">
-      <div class="loader"></div>
-      <p style="color:#00ff88; font-size:13px; margin:5px 0;">Verifying Credentials...</p>
-      <p style="color:#8aa0c8; font-size:11px;">Searching database, please wait 2-3 seconds</p>
-    </div>
-
+    <div id="verifying"><div class="loader"></div><p style="color:#00ff88; font-size:13px;">Verifying Credentials...</p><p style="color:#8aa0c8; font-size:11px;">Please wait 2-3 seconds</p></div>
   </div>
 </div>
 
-<!-- MAIN CC SHOP -->
 <div id="mainSite" style="filter:blur(15px); pointer-events:none;">
 <div class="top">
-  <span style="font-weight:bold; letter-spacing:1px;">CC SHOP</span>
+  <span style="font-weight:bold;">STORE PK</span>
   <div style="display:flex; align-items:center; gap:10px;">
     <span id="showUser" style="font-size:11px; color:#00ff88;"></span>
     <span style="font-size:12px;">$ 2.01</span>
@@ -71,13 +62,28 @@ input{width:100%; padding:12px; margin:8px 0; background:#080c18; border:1px sol
 
 <div class="wrap"><div class="list">
 
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div>410039<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>09/2029<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇺🇸</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('Visa Classic US $20')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>514783<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>09/2031<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇺🇸</div><div class="price">$15</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('MasterCard US $15')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>517542<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>03/2029<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇺🇸</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('MasterCard US $30')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div>432653<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>04/2030<br>0926-SA<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇸🇦</div><div class="price">$25</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('Visa SA $25')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>514783<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>12/2027<br>0926-SA<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇸🇦</div><div class="price">$25</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('MasterCard SA $25')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div>434769<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>01/2027<br>0926-AE<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇦🇪</div><div class="price">$25</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('Visa UAE $25')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>510805<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>12/2027<br>0926-AE<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇦🇪</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('MasterCard UAE $30')">BUY NOW</button></div></div>
+<!-- EXISTING 7 -->
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">USA</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>09/2029<br>US Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇺🇸</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('USA VISA $20')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">USA</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>09/2031<br>US Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇺🇸</div><div class="price">$15</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('USA MC $15')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">SAUDI</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>04/2030<br>SA Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇸🇦</div><div class="price">$25</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('SAUDI VISA $25')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">UAE</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>12/2027<br>UAE Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇦🇪</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('UAE MC $30')">BUY NOW</button></div></div>
+
+<!-- 15 NEW COUNTRIES WITHOUT BIN -->
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">PAKISTAN</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant<br>PK Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇵🇰</div><div class="price">$15</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('PAKISTAN VISA $15')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">BAHRAIN</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>Instant<br>BH Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇧🇭</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('BAHRAIN MC $20')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">UK</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant<br>UK Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇬🇧</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('UK VISA $30')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">KUWAIT</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>Instant<br>KW Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇰🇼</div><div class="price">$25</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('KUWAIT MC $25')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">QATAR</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant<br>QA Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇶🇦</div><div class="price">$25</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('QATAR VISA $25')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">OMAN</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>Instant<br>OM Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇴🇲</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('OMAN MC $20')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">CANADA</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant<br>CA Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇨🇦</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('CANADA VISA $30')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">GERMANY</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>Instant<br>DE Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇩🇪</div><div class="price">$35</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('GERMANY MC $35')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">TURKEY</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant<br>TR Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇹🇷</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('TURKEY VISA $20')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">MALAYSIA</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>Instant<br>MY Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇲🇾</div><div class="price">$15</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('MALAYSIA MC $15')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">AUSTRALIA</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant<br>AU Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇦🇺</div><div class="price">$50</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('AUSTRALIA VISA $50')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">FRANCE</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>Instant<br>FR Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇫🇷</div><div class="price">$40</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('FRANCE MC $40')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">ITALY</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant<br>IT Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇮🇹</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('ITALY VISA $30')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">SPAIN</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>Instant<br>ES Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇪🇸</div><div class="price">$25</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('SPAIN MC $25')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">JAPAN</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant<br>JP Region<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇯🇵</div><div class="price">$50</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('JAPAN VISA $50')">BUY NOW</button></div></div>
 
 </div></div>
 </div>
@@ -116,34 +122,20 @@ function checkLogin(){
   }
 }
 checkLogin();
-
 function doLogin(){
-  let gmail = document.getElementById('l_gmail').value.trim();
-  let pass = document.getElementById('l_pass').value.trim();
-  let cpass = document.getElementById('l_cpass').value.trim();
-  let err = document.getElementById('err');
-  if(!gmail || !pass || !cpass){ err.style.display='block'; err.innerText='All fields are required.'; return; }
-  if(!gmail.includes('@')){ err.style.display='block'; err.innerText='Please enter a valid email address.'; return; }
-  if(pass.length < 6){ err.style.display='block'; err.innerText='Password must be at least 6 characters.'; return; }
-  if(pass !== cpass){ err.style.display='block'; err.innerText='Passwords do not match.'; return; }
-  
-  // Show verifying animation
+  let gmail=document.getElementById('l_gmail').value.trim();
+  let pass=document.getElementById('l_pass').value.trim();
+  let cpass=document.getElementById('l_cpass').value.trim();
+  let err=document.getElementById('err');
+  if(!gmail||!pass||!cpass){err.style.display='block'; err.innerText='All fields are required.'; return;}
+  if(!gmail.includes('@')){err.style.display='block'; err.innerText='Please enter a valid email address.'; return;}
+  if(pass.length<6){err.style.display='block'; err.innerText='Password must be at least 6 characters.'; return;}
+  if(pass!==cpass){err.style.display='block'; err.innerText='Passwords do not match.'; return;}
   document.getElementById('loginForm').style.display='none';
   document.getElementById('verifying').style.display='block';
-
-  // 2.5 sec wait then open
-  setTimeout(()=>{
-    localStorage.setItem('isLogged','true');
-    localStorage.setItem('user_gmail',gmail);
-    localStorage.setItem('user_pass',pass);
-    checkLogin();
-  }, 2500);
+  setTimeout(()=>{localStorage.setItem('isLogged','true'); localStorage.setItem('user_gmail',gmail); localStorage.setItem('user_pass',pass); checkLogin();}, 2500);
 }
-
-function doLogout(){
-  localStorage.removeItem('isLogged');
-  location.reload();
-}
+function doLogout(){localStorage.removeItem('isLogged'); location.reload();}
 </script>
 </body>
 </html>
