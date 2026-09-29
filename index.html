@@ -1,108 +1,45 @@
-<title>Premium Cards PK - 10 Countries</title>
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PREMIUM VIRTUAL CARDS - WORLDWIDE</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif}
-body{background:#0a0a0a;color:#fff;min-height:100vh}
-.header{background:linear-gradient(135deg,#111 0%,#1a1a1a 100%);padding:15px 20px;border-bottom:2px solid #FFD700;position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.logo{font-size:22px;font-weight:800;color:#FFD700}
-.wallet{display:flex;gap:10px;align-items:center;background:#222;padding:8px 14px;border-radius:30px;border:1px solid #333}
-.bal{color:#FFD700;font-weight:700}
-.btn-gold{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;border:none;padding:8px 16px;border-radius:20px;font-weight:700;cursor:pointer}
-.search-bar{padding:20px;display:flex;gap:10px}
-.search-bar input{flex:1;padding:12px 15px;border-radius:10px;border:1px solid #333;background:#1a1a1a;color:#fff}
-.filter{padding:0 20px 10px;display:flex;gap:8px;flex-wrap:wrap}
-.f-btn{background:#1a1a1a;border:1px solid #333;color:#aaa;padding:6px 14px;border-radius:20px;cursor:pointer}
-.f-btn.active{background:#FFD700;color:#000;border-color:#FFD700;font-weight:700}
-.grid{padding:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.card{background:linear-gradient(145deg,#1e1e1e,#151515);border:1px solid #2a2a2a;border-radius:16px;padding:16px}
-.card:hover{border-color:#FFD700;transform:translateY(-3px)}
-.c-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.flag{font-size:28px}
-.brand{font-size:12px;background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-weight:800}
-.c-country{font-weight:700;font-size:16px}
-.c-type{font-size:12px;color:#aaa;margin-bottom:10px}
-.c-price{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
-.price{font-size:22px;font-weight:800;color:#FFD700}
-.buy{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;border:none;padding:8px 18px;border-radius:8px;font-weight:800;cursor:pointer}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;justify-content:center;align-items:center;z-index:200;padding:15px}
-.modal.active{display:flex}
-.m-box{background:#1a1a1a;border:1px solid #FFD700;border-radius:16px;padding:20px;width:100%;max-width:380px}
-.m-box h3{color:#FFD700;margin-bottom:10px;text-align:center}
-.m-box input{width:100%;padding:11px;margin:7px 0;border-radius:8px;border:1px solid #333;background:#111;color:#fff}
-.ubl{background:#111;border:1px dashed #FFD700;padding:10px;border-radius:8px;margin:10px 0;font-size:13px}
-.pay-btn{width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;border:none;padding:12px;border-radius:8px;font-weight:800;margin-top:10px;cursor:pointer}
-.close{width:100%;background:#222;color:#fff;border:1px solid #333;padding:10px;border-radius:8px;margin-top:8px;cursor:pointer}
-</style>
-</head>
-<body>
-<div class="header">
-<div class="logo">PREMIUM CARDS PK</div>
-<div class="wallet">Balance: <span class="bal" id="balance">$0</span> <button class="btn-gold" onclick="openAddFunds()">Add Funds</button></div>
-</div>
-<div class="search-bar"><input type="text" id="search" placeholder="Search..." onkeyup="render()"></div>
-<div class="filter" id="filters"></div>
-<div class="grid" id="grid"></div>
-<div class="modal" id="buyModal"><div class="m-box"><h3 id="buyTitle">Buy Card</h3><p style="font-size:13px;color:#aaa;text-align:center" id="buyInfo"></p><div class="ubl"><b>UBL Bank:</b> 1224390615808<br><b>Title:</b> Abdul Rehman<br><b>Amount:</b> <span id="payAmount" style="color:#FFD700"></span></div><input type="text" id="trx" placeholder="Transaction ID"><input type="email" id="email" placeholder="Your Gmail"><input type="file"><button class="pay-btn" onclick="confirmPay()">Confirm</button><button class="close" onclick="closeModal('buyModal')">Cancel</button></div></div>
-<div class="modal" id="fundsModal"><div class="m-box"><h3>Add Funds</h3><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0"><button class="btn-gold" onclick="setFund(10)">$10</button><button class="btn-gold" onclick="setFund(20)">$20</button><button class="btn-gold" onclick="setFund(30)">$30</button><button class="btn-gold" onclick="setFund(50)">$50</button><button class="btn-gold" onclick="setFund(100)">$100</button><input type="number" id="customFund" placeholder="Custom"></div><div class="ubl"><b>UBL:</b> 1224390615808 - Abdul Rehman<br><b>Selected:</b> <span id="fundAmount" style="color:#FFD700">$0</span></div><input type="text" id="f_trx" placeholder="Transaction ID"><input type="email" id="f_email" placeholder="Your Gmail"><button class="pay-btn" onclick="confirmFund()">Confirm</button><button class="close" onclick="closeModal('fundsModal')">Close</button></div></div>
+body{background:#0a1026;color:#fff}
+.header{background:#070b18;padding:14px 10px;text-align:center;border-bottom:2px solid #FFD700;position:sticky;top:0;z-index:99}
+.header h1{color:#FFD700;font-size:18px}
+.header p{color:#FFD700;font-size:13px;margin-top:4px}
+.topbar{display:flex;justify-content:space-between;padding:10px 12px;background:#050814;font-size:13px}
+.gold{color:#FFD700;font-weight:800}
+.btn-gold{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;border:none;padding:6px 12px;border-radius:20px;font-weight:800;font-size:12px}
+.wrap{overflow-x:auto}
+.row{width:100%;min-width:700px;display:grid;grid-template-columns:120px 80px 80px 60px 110px;align-items:center;padding:14px 10px;border-bottom:1px solid #1a2747;background:#101a36}
+.row:nth-child(even){background:#0f1830}
+.flag{font-size:28px;text-align:center}
+.price{color:#00ff87;font-weight:800;font-size:20px;text-align:center}
+.cart{background:#1a2747;border:1px solid #2a3a66;color:#fff;padding:10px;border-radius:8px;font-size:18px}
+.buy{background:#2563eb;color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:800;font-size:13px}
+.type{font-size:12px}.type b{display:block;color:#fff}
+.badge{font-size:8px;background:#FFD700;color:#000;padding:2px 5px;border-radius:3px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;justify-content:center;align-items:center;z-index:999;padding:12px}
+.modal.on{display:flex}
+.box{background:#111a33;border:2px solid #FFD700;border-radius:14px;padding:16px;max-width:360px;width:100%}
+.box input{width:100%;padding:10px;margin:5px 0;background:#070b18;border:1px solid #333;color:#fff;border-radius:8px}
+.ubl{background:#070b18;padding:8px;border-radius:8px;border:1px dashed #FFD700;font-size:12px;margin:6px 0}
+</style></head><body>
+<div class="header"><h1>PREMIUM VIRTUAL CARDS - WORLDWIDE</h1><p>👉 Swipe Left-Right to see BUY NOW 👈</p></div>
+<div class="topbar"><div>Balance: <b id="bal" class="gold">$2</b></div><button class="btn-gold" onclick="openF()">Add Funds</button></div>
+<div class="wrap"><div class="list" id="list"></div></div>
+<div class="modal" id="buyM"><div class="box"><h3 style="color:#FFD700;text-align:center">Buy Card</h3><p id="sel" style="text-align:center;font-size:13px;margin:6px 0"></p><div class="ubl"><b>UBL:</b> 1224390615808<br><b>Title:</b> Abdul Rehman<br>Amount: <b id="amt" class="gold"></b></div><input id="trx" placeholder="Transaction ID"><input id="gmail" placeholder="Your Gmail"><button class="btn-gold" style="width:100%;padding:12px;margin-top:8px" onclick="pay()">Confirm & WhatsApp</button><button onclick="closeM('buyM')" style="width:100%;padding:8px;background:#222;color:#fff;border:1px solid #333;border-radius:8px;margin-top:6px">Close</button></div></div>
+<div class="modal" id="fundM"><div class="box"><h3 style="color:#FFD700;text-align:center">Add Funds</h3><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0"><button class="btn-gold" onclick="setF(2)">$2</button><button class="btn-gold" onclick="setF(10)">$10</button><button class="btn-gold" onclick="setF(20)">$20</button><button class="btn-gold" onclick="setF(30)">$30</button><button class="btn-gold" onclick="setF(40)">$40</button><button class="btn-gold" onclick="setF(50)">$50</button><button class="btn-gold" onclick="setF(100)">$100</button><button class="btn-gold" onclick="setF(200)">$200</button></div><input type="number" id="cFund" placeholder="Custom $"><div class="ubl">Selected: <b id="fAmt" class="gold">$0</b><br>UBL: 1224390615808 Abdul Rehman</div><input id="f_trx" placeholder="Transaction ID"><input id="f_gmail" placeholder="Your Gmail"><button class="btn-gold" style="width:100%;padding:12px" onclick="fund()">Confirm Funds</button><button onclick="closeM('fundM')" style="width:100%;padding:8px;background:#222;color:#fff;border:1px solid #333;border-radius:8px;margin-top:6px">Close</button></div></div>
 <script>
-const cards=[
-{cc:"US",flag:"🇺🇸",name:"USA",type:"GOLD Prepaid Card",price:15},
-{cc:"US",flag:"🇺🇸",name:"USA",type:"PLATINUM Prepaid Card",price:25},
-{cc:"GB",flag:"🇬🇧",name:"UK",type:"WORLD Prepaid Card",price:20},
-{cc:"GB",flag:"🇬🇧",name:"UK",type:"WORLD ELITE Prepaid Card",price:35},
-{cc:"SA",flag:"🇸🇦",name:"Saudi Arabia",type:"GOLD Prepaid Card",price:15},
-{cc:"SA",flag:"🇸🇦",name:"Saudi Arabia",type:"PLATINUM Prepaid Card",price:30},
-{cc:"AE",flag:"🇦🇪",name:"UAE - Dubai",type:"GOLD Prepaid Card",price:15},
-{cc:"AE",flag:"🇦🇪",name:"UAE - Dubai",type:"WORLD ELITE Prepaid Card",price:50},
-{cc:"PK",flag:"🇵🇰",name:"Pakistan",type:"CLASSIC Prepaid Card",price:10},
-{cc:"PK",flag:"🇵🇰",name:"Pakistan",type:"GOLD Prepaid Card",price:20},
-{cc:"CA",flag:"🇨🇦",name:"Canada",type:"GOLD Prepaid Card",price:20},
-{cc:"CA",flag:"🇨🇦",name:"Canada",type:"PLATINUM Prepaid Card",price:35},
-{cc:"DE",flag:"🇩🇪",name:"Germany",type:"GOLD Prepaid Card",price:20},
-{cc:"DE",flag:"🇩🇪",name:"Germany",type:"WORLD Prepaid Card",price:40},
-{cc:"TR",flag:"🇹🇷",name:"Turkey",type:"GOLD Prepaid Card",price:15},
-{cc:"TR",flag:"🇹🇷",name:"Turkey",type:"PLATINUM Prepaid Card",price:25},
-{cc:"QA",flag:"🇶🇦",name:"Qatar",type:"GOLD Prepaid Card",price:15},
-{cc:"QA",flag:"🇶🇦",name:"Qatar",type:"PLATINUM Prepaid Card",price:30},
-{cc:"KW",flag:"🇰🇼",name:"Kuwait",type:"GOLD Prepaid Card",price:15},
-{cc:"KW",flag:"🇰🇼",name:"Kuwait",type:"WORLD ELITE Prepaid Card",price:45},
-];
-let bal=parseInt(localStorage.getItem('bal')||0);
-let selectedFund=0,selectedCard=null,activeCC="ALL";
-document.getElementById('balance').innerText='$'+bal;
-function initFilters(){
-const uniq=[...new Set(cards.map(c=>c.cc))];
-document.getElementById('filters').innerHTML='<button class="f-btn active" onclick="setCountry(\'ALL\',this)">ALL</button>'+uniq.map(cc=>`<button class="f-btn" onclick="setCountry('${cc}',this)">${cc}</button>`).join('');
-}
-function setCountry(cc,el){activeCC=cc;document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');render();}
-function render(){
-const q=document.getElementById('search').value.toLowerCase();
-let list=cards.filter(c=>{
-if(activeCC!=="ALL"&&c.cc!==activeCC)return false;
-if(q&&!(c.name.toLowerCase().includes(q)||c.type.toLowerCase().includes(q)))return false;
-return true;
-});
-document.getElementById('grid').innerHTML=list.map(c=>`<div class="card"><div class="c-top"><span class="flag">${c.flag}</span><span class="brand">PREPAID</span></div><div class="c-country">${c.name}</div><div class="c-type">${c.type}</div><div class="c-price"><span class="price">$${c.price}</span><button class="buy" onclick="buyCard('${c.cc}','${c.name}','${c.type}',${c.price})">BUY NOW</button></div></div>`).join('');
-}
-function buyCard(cc,name,type,price){selectedCard={cc,name,type,price};document.getElementById('buyTitle').innerText=name+' - '+type;document.getElementById('payAmount').innerText='$'+price;document.getElementById('buyModal').classList.add('active');}
-function openAddFunds(){document.getElementById('fundsModal').classList.add('active');}
-function setFund(v){selectedFund=v;document.getElementById('fundAmount').innerText='$'+v;document.getElementById('customFund').value=v;}
-function closeModal(id){document.getElementById(id).classList.remove('active');}
-function confirmPay(){
-const trx=document.getElementById('trx').value;
-const email=document.getElementById('email').value;
-if(!trx||!email){alert('Enter details');return;}
-if(bal<selectedCard.price){alert('Insufficient! Add Funds. Bal: $'+bal);return;}
-bal-=selectedCard.price;localStorage.setItem('bal',bal);document.getElementById('balance').innerText='$'+bal;
-alert('Order submitted for '+selectedCard.name);closeModal('buyModal');
-}
-function confirmFund(){
-let v=parseInt(document.getElementById('customFund').value||selectedFund);
-if(!v)return alert('Select amount');
-bal+=v;localStorage.setItem('bal',bal);document.getElementById('balance').innerText='$'+bal;
-alert('Funds $'+v+' added (demo)');closeModal('fundsModal');
-}
-initFilters();render();
-</script>
-</body>
-</html>
+const cards=[["US","🇺🇸","USA GOLD Prepaid",20],["US","🇺🇸","USA PLATINUM Prepaid",15],["US","🇺🇸","USA WORLD Prepaid",30],["SA","🇸🇦","Saudi GOLD Prepaid",25],["AE","🇦🇪","UAE GOLD Prepaid",25],["AE","🇦🇪","UAE WORLD Prepaid",30],["PK","🇵🇰","Pakistan GOLD Prepaid",10],["CA","🇨🇦","Canada GOLD Prepaid",20],["DE","🇩🇪","Germany GOLD Prepaid",20],["TR","🇹🇷","Turkey GOLD Prepaid",15],["QA","🇶🇦","Qatar GOLD Prepaid",15],["KW","🇰🇼","Kuwait GOLD Prepaid",15],["BH","🇧🇭","Bahrain GOLD Prepaid",15],["OM","🇴🇲","Oman GOLD Prepaid",15],["MY","🇲🇾","Malaysia GOLD Prepaid",15],["SG","🇸🇬","Singapore GOLD Prepaid",25],["AU","🇦🇺","Australia GOLD Prepaid",20]];
+let bal=2,cur="",curPrice=0,fundSel=0;
+document.getElementById('bal').innerText='$'+bal;
+let h="";cards.forEach(c=>{h+=`<div class="row"><div class="type"><b>${c[2]}</b><span class="badge">PREPAID</span> <span style="color:#00ff87">[Instant]</span></div><div class="flag">${c[1]}</div><div class="price">$${c[3]}</div><div style="text-align:center"><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('${c[2]}',${c[3]})">BUY NOW</button></div></div>`;});
+document.getElementById('list').innerHTML=h;
+function openP(n,p){cur=n;curPrice=p;document.getElementById('sel').innerText=n;document.getElementById('amt').innerText='$'+p;document.getElementById('buyM').classList.add('on');}
+function openF(){document.getElementById('fundM').classList.add('on');}
+function closeM(id){document.getElementById(id).classList.remove('on');}
+function setF(v){fundSel=v;document.getElementById('fAmt').innerText='$'+v;document.getElementById('cFund').value=v;}
+function pay(){let t=document.getElementById('trx').value,g=document.getElementById('gmail').value;if(!t||!g){alert('TRX & Gmail');return;}if(bal<curPrice){alert('Balance low');openF();return;}bal-=curPrice;document.getElementById('bal').innerText='$'+bal;let msg=`ORDER: ${cur}%0ATrx:${t}%0AGmail:${g}`;window.open('https://wa.me/923012896632?text='+msg);closeM('buyM');}
+function fund(){let v=parseInt(document.getElementById('cFund').value||fundSel);if(!v){alert('Amount');return;}bal+=v;document.getElementById('bal').innerText='$'+bal;alert('Funds $'+v+' added');closeM('fundM');}
+</script></body></html>
