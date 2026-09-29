@@ -2,17 +2,17 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>STORE PK - PREMIUM CC</title>
+<title>CC SHOP - PREMIUM STORE</title>
 <style>
 body{margin:0; background:#0d1425; color:white; font-family:Arial;}
-.top{padding:12px 10px; background:#080c18; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e2a4a; position:sticky; top:0; z-index:100;}
-.wrap{overflow-x:auto;}
+.top{padding:12px 15px; background:#080c18; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e2a4a;}
+.wrap{overflow-x:auto; -webkit-overflow-scrolling:touch;}
 .list{min-width:700px; background:#101a31; margin:8px; border-radius:10px; border:1px solid #1e2a4a;}
 .row{display:grid; grid-template-columns:40px 95px 130px 160px 60px 60px 60px 90px; align-items:center; padding:12px 8px; border-bottom:1px solid #1a2747; font-size:13px;}
 .visa-box{width:58px; height:36px; background:white; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#1A1F71; font-weight:900; font-style:italic; font-size:16px;}
 .mc-box{width:58px; height:36px; background:white; border-radius:4px; display:flex; align-items:center; justify-content:center; position:relative;}
 .mc-c1{width:22px; height:22px; background:#EB001B; border-radius:50%; margin-right:-6px;}
-.mc-c2{width:22px; height:22px; background:#F79E1B; border-radius:50%;}
+.mc-c2{width:22px; height:22px; background:#F79E1B; border-radius:50%; opacity:0.9;}
 .mc-txt{position:absolute; bottom:1px; font-size:7px; color:#000; font-weight:bold;}
 .badge{background:#111; border:1px solid #333; padding:2px 6px; border-radius:4px; font-size:9px; display:inline-block; margin-top:3px;}
 .price{color:#00ff88; font-weight:bold; font-size:16px;}
@@ -23,8 +23,7 @@ body{margin:0; background:#0d1425; color:white; font-family:Arial;}
 .box{background:#111a33; padding:20px; border-radius:12px; max-width:360px; margin:30px auto; border:1px solid #2a3a66;}
 input{width:100%; padding:12px; margin:8px 0; background:#080c18; border:1px solid #2a3a66; color:white; border-radius:8px; box-sizing:border-box;}
 #loginGate{position:fixed; top:0; left:0; width:100%; height:100%; background:#070c1a; z-index:10000; display:flex; align-items:center; justify-content:center; padding:15px; box-sizing:border-box;}
-.logout{background:#ff2a2a; color:white; border:none; padding:7px 10px; border-radius:6px; font-weight:bold; cursor:pointer; font-size:11px;}
-.addfunds{background:#00ff88; color:#000; border:none; padding:7px 12px; border-radius:6px; font-weight:bold; cursor:pointer; font-size:11px;}
+.logout{background:#ff2a2a; color:white; border:none; padding:7px 14px; border-radius:6px; font-weight:bold; cursor:pointer; font-size:12px;}
 #verifying{display:none; text-align:center; margin-top:15px;}
 .loader{width:30px; height:30px; border:3px solid #1e2a4a; border-top:3px solid #2563eb; border-radius:50%; margin:10px auto; animation:spin 1s linear infinite;}
 @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
@@ -32,81 +31,59 @@ input{width:100%; padding:12px; margin:8px 0; background:#080c18; border:1px sol
 </head>
 <body>
 
+<!-- PROFESSIONAL LOGIN -->
 <div id="loginGate">
-  <div style="background:#111a33; border:1px solid #2a3a66; border-radius:16px; width:100%; max-width:390px; padding:24px; text-align:center;">
+  <div style="background:#111a33; border:1px solid #2a3a66; border-radius:16px; width:100%; max-width:390px; padding:24px; text-align:center; box-shadow:0 10px 40px rgba(0,0,0,0.5);">
     <div style="font-size:32px;">🔐</div>
-    <h2 style="color:#f5c542; margin:5px 0;">LOGIN REQUIRED</h2>
-    <p style="font-size:12px; color:#8aa0c8; margin-bottom:18px;">Please create an account to access the store</p>
+    <h2 style="color:#f5c542; margin:5px 0 5px 0; letter-spacing:1px;">LOGIN REQUIRED</h2>
+    <p style="font-size:12px; color:#8aa0c8; margin-bottom:18px;">Please create an account to access the CC Store</p>
+    
     <div id="loginForm">
       <input id="l_gmail" type="email" placeholder="Enter Your Email">
       <input id="l_pass" type="password" placeholder="Create Password">
       <input id="l_cpass" type="password" placeholder="Confirm Password">
-      <button onclick="doLogin()" style="width:100%; padding:13px; background:#2563eb; color:white; border:none; border-radius:8px; font-weight:bold; margin-top:14px; cursor:pointer;">Create Account & Login</button>
+      <button onclick="doLogin()" style="width:100%; padding:13px; background:#2563eb; color:white; border:none; border-radius:8px; font-weight:bold; margin-top:14px; cursor:pointer; font-size:14px;">Create Account & Login</button>
       <p id="err" style="color:#ff4444; font-size:12px; margin-top:10px; display:none;"></p>
     </div>
-    <div id="verifying"><div class="loader"></div><p style="color:#00ff88; font-size:13px;">Verifying Credentials...</p><p style="color:#8aa0c8; font-size:11px;">Please wait 2-3 seconds</p></div>
+
+    <div id="verifying">
+      <div class="loader"></div>
+      <p style="color:#00ff88; font-size:13px; margin:5px 0;">Verifying Credentials...</p>
+      <p style="color:#8aa0c8; font-size:11px;">Searching database, please wait 2-3 seconds</p>
+    </div>
+
   </div>
 </div>
 
+<!-- MAIN CC SHOP -->
 <div id="mainSite" style="filter:blur(15px); pointer-events:none;">
 <div class="top">
-  <span style="font-weight:bold;">STORE PK</span>
-  <div style="display:flex; align-items:center; gap:7px;">
-    <span id="showUser" style="font-size:10px; color:#00ff88;"></span>
-    <span style="font-size:12px; background:#111a33; padding:5px 8px; border-radius:5px; border:1px solid #2a3a66;">$ 0.00</span>
-    <button class="addfunds" onclick="openFunds()">ADD FUNDS</button>
+  <span style="font-weight:bold; letter-spacing:1px;">CC SHOP</span>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <span id="showUser" style="font-size:11px; color:#00ff88;"></span>
+    <span style="font-size:12px;">$ 2.01</span>
     <button class="logout" onclick="doLogout()">LOGOUT</button>
   </div>
 </div>
 
-<h3 style="text-align:center; color:#f5c542; font-size:14px; margin:12px 0;">PREMIUM VIRTUAL CARDS - WORLDWIDE</h3>
-<div class="hint">👉 Swipe Left-Right to see BUY NOW — Scroll Down For More Cards 👈</div>
+<h3 style="text-align:center; color:#f5c542; font-size:15px; margin:12px 0;">PREMIUM VIRTUAL CARDS - WORLDWIDE</h3>
+<div class="hint">👉 Swipe Left-Right to see BUY NOW 👈</div>
 
 <div class="wrap"><div class="list">
 
-<!-- PAKISTAN 4 CARDS -->
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">PAKISTAN</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant Delivery<br>PK Region<br>Valid - 3 Years</div><div style="font-size:24px;">🇵🇰</div><div class="price">$15</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('PAKISTAN $15')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">PAKISTAN</span></div><div><b>DEBIT</b><br>PREMIUM</div><div>Instant Delivery<br>PK Region<br>Valid - 3 Years</div><div style="font-size:24px;">🇵🇰</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('PAKISTAN $20')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">PAKISTAN</span></div><div><b>DEBIT</b><br>GOLD</div><div>Instant Delivery<br>PK Region<br>Valid - 3 Years</div><div style="font-size:24px;">🇵🇰</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('PAKISTAN $30')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">PAKISTAN</span></div><div><b>DEBIT</b><br>PLATINUM</div><div>Instant Delivery<br>PK Region<br>Valid - 3 Years</div><div style="font-size:24px;">🇵🇰</div><div class="price">$40</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('PAKISTAN $40')">BUY NOW</button></div></div>
-
-<!-- UK 4 CARDS -->
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">UK</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant Delivery<br>UK Region</div><div style="font-size:24px;">🇬🇧</div><div class="price">$15</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('UK $15')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">UK</span></div><div><b>DEBIT</b><br>PREMIUM</div><div>Instant Delivery<br>UK Region</div><div style="font-size:24px;">🇬🇧</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('UK $20')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">UK</span></div><div><b>DEBIT</b><br>GOLD</div><div>Instant Delivery<br>UK Region</div><div style="font-size:24px;">🇬🇧</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('UK $30')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">UK</span></div><div><b>DEBIT</b><br>PLATINUM</div><div>Instant Delivery<br>UK Region</div><div style="font-size:24px;">🇬🇧</div><div class="price">$40</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('UK $40')">BUY NOW</button></div></div>
-
-<!-- USA 4 CARDS -->
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">USA</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant Delivery<br>USA Region</div><div style="font-size:24px;">🇺🇸</div><div class="price">$15</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('USA $15')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">USA</span></div><div><b>DEBIT</b><br>PREMIUM</div><div>Instant Delivery<br>USA Region</div><div style="font-size:24px;">🇺🇸</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('USA $20')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">USA</span></div><div><b>DEBIT</b><br>GOLD</div><div>Instant Delivery<br>USA Region</div><div style="font-size:24px;">🇺🇸</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('USA $30')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">USA</span></div><div><b>DEBIT</b><br>PLATINUM</div><div>Instant Delivery<br>USA Region</div><div style="font-size:24px;">🇺🇸</div><div class="price">$40</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('USA $40')">BUY NOW</button></div></div>
-
-<!-- BAHRAIN -->
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">BAHRAIN</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant Delivery<br>BH Region</div><div style="font-size:24px;">🇧🇭</div><div class="price">$15</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('BAHRAIN $15')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">BAHRAIN</span></div><div><b>DEBIT</b><br>PREMIUM</div><div>Instant Delivery<br>BH Region</div><div style="font-size:24px;">🇧🇭</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('BAHRAIN $20')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">BAHRAIN</span></div><div><b>DEBIT</b><br>GOLD</div><div>Instant Delivery<br>BH Region</div><div style="font-size:24px;">🇧🇭</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('BAHRAIN $30')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">BAHRAIN</span></div><div><b>DEBIT</b><br>PLATINUM</div><div>Instant Delivery<br>BH Region</div><div style="font-size:24px;">🇧🇭</div><div class="price">$40</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('BAHRAIN $40')">BUY NOW</button></div></div>
-
-<!-- KUWAIT -->
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">KUWAIT</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant Delivery<br>KW Region</div><div style="font-size:24px;">🇰🇼</div><div class="price">$15</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('KUWAIT $15')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">KUWAIT</span></div><div><b>DEBIT</b><br>PREMIUM</div><div>Instant Delivery<br>KW Region</div><div style="font-size:24px;">🇰🇼</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('KUWAIT $20')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">KUWAIT</span></div><div><b>DEBIT</b><br>GOLD</div><div>Instant Delivery<br>KW Region</div><div style="font-size:24px;">🇰🇼</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('KUWAIT $30')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">KUWAIT</span></div><div><b>DEBIT</b><br>PLATINUM</div><div>Instant Delivery<br>KW Region</div><div style="font-size:24px;">🇰🇼</div><div class="price">$40</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('KUWAIT $40')">BUY NOW</button></div></div>
-
-<!-- UAE / SAUDI / QATAR ETC YOU CAN COPY MORE -->
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">UAE</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>Instant Delivery<br>UAE Region</div><div style="font-size:24px;">🇦🇪</div><div class="price">$15</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('UAE $15')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">UAE</span></div><div><b>DEBIT</b><br>PREMIUM</div><div>Instant Delivery<br>UAE Region</div><div style="font-size:24px;">🇦🇪</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('UAE $20')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div><span class="badge">UAE</span></div><div><b>DEBIT</b><br>GOLD</div><div>Instant Delivery<br>UAE Region</div><div style="font-size:24px;">🇦🇪</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('UAE $30')">BUY NOW</button></div></div>
-<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div><span class="badge">UAE</span></div><div><b>DEBIT</b><br>PLATINUM</div><div>Instant Delivery<br>UAE Region</div><div style="font-size:24px;">🇦🇪</div><div class="price">$40</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('UAE $40')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div>410039<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>09/2029<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇺🇸</div><div class="price">$20</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('Visa Classic US $20')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>514783<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>09/2031<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇺🇸</div><div class="price">$15</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('MasterCard US $15')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>517542<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>03/2029<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇺🇸</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('MasterCard US $30')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div>432653<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>04/2030<br>0926-SA<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇸🇦</div><div class="price">$25</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('Visa SA $25')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>514783<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>12/2027<br>0926-SA<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇸🇦</div><div class="price">$25</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('MasterCard SA $25')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="visa-box">VISA</div>434769<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>CLASSIC</div><div>01/2027<br>0926-AE<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇦🇪</div><div class="price">$25</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('Visa UAE $25')">BUY NOW</button></div></div>
+<div class="row"><input type="checkbox"><div><div class="mc-box"><div class="mc-c1"></div><div class="mc-c2"></div><div class="mc-txt">MasterCard</div></div>510805<br><span class="badge">BANK</span></div><div><b>DEBIT</b><br>ENHANCED</div><div>12/2027<br>0926-AE<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div><div style="font-size:24px;">🇦🇪</div><div class="price">$30</div><div><button class="cart">🛒</button></div><div><button class="buy" onclick="openP('MasterCard UAE $30')">BUY NOW</button></div></div>
 
 </div></div>
-<p style="text-align:center; color:#555; font-size:11px; padding:20px;">Add more countries by copying the 4-row blocks above and changing flag + name</p>
 </div>
 
-<!-- PAYMENT / ADD FUNDS - SAME BINANCE -->
 <div id="pay"><div class="box">
-<h3 id="payTitle" style="color:#00ff88; text-align:center;">PAYMENT</h3>
+<h3 style="color:#00ff88; text-align:center;">PAYMENT</h3>
 <p id="sel" style="text-align:center; color:#f5c542;"></p>
 <div style="background:#080c18; padding:12px; border-radius:8px; border:1px solid #2a3a66; line-height:1.6;">
 Binance ID: <b style="color:#f5c542;">979305961</b><br>
@@ -122,8 +99,7 @@ Name: <b>Lucifer</b><br>
 
 <script>
 let cur="";
-function openP(n){cur=n; document.getElementById('payTitle').innerText='PAYMENT'; document.getElementById('sel').innerText=n; document.getElementById('pay').style.display='block';}
-function openFunds(){cur='ADD FUNDS'; document.getElementById('payTitle').innerText='ADD FUNDS'; document.getElementById('sel').innerText='Add Funds To Your Wallet - $0.00 Balance'; document.getElementById('pay').style.display='block';}
+function openP(n){cur=n; document.getElementById('sel').innerText=n; document.getElementById('pay').style.display='block';}
 function send(){
   let t=document.getElementById('trxid').value;
   let g=document.getElementById('gmail').value;
@@ -140,20 +116,34 @@ function checkLogin(){
   }
 }
 checkLogin();
+
 function doLogin(){
-  let gmail=document.getElementById('l_gmail').value.trim();
-  let pass=document.getElementById('l_pass').value.trim();
-  let cpass=document.getElementById('l_cpass').value.trim();
-  let err=document.getElementById('err');
-  if(!gmail||!pass||!cpass){err.style.display='block'; err.innerText='All fields are required.'; return;}
-  if(!gmail.includes('@')){err.style.display='block'; err.innerText='Please enter a valid email address.'; return;}
-  if(pass.length<6){err.style.display='block'; err.innerText='Password must be at least 6 characters.'; return;}
-  if(pass!==cpass){err.style.display='block'; err.innerText='Passwords do not match.'; return;}
+  let gmail = document.getElementById('l_gmail').value.trim();
+  let pass = document.getElementById('l_pass').value.trim();
+  let cpass = document.getElementById('l_cpass').value.trim();
+  let err = document.getElementById('err');
+  if(!gmail || !pass || !cpass){ err.style.display='block'; err.innerText='All fields are required.'; return; }
+  if(!gmail.includes('@')){ err.style.display='block'; err.innerText='Please enter a valid email address.'; return; }
+  if(pass.length < 6){ err.style.display='block'; err.innerText='Password must be at least 6 characters.'; return; }
+  if(pass !== cpass){ err.style.display='block'; err.innerText='Passwords do not match.'; return; }
+  
+  // Show verifying animation
   document.getElementById('loginForm').style.display='none';
   document.getElementById('verifying').style.display='block';
-  setTimeout(()=>{localStorage.setItem('isLogged','true'); localStorage.setItem('user_gmail',gmail); checkLogin();}, 2500);
+
+  // 2.5 sec wait then open
+  setTimeout(()=>{
+    localStorage.setItem('isLogged','true');
+    localStorage.setItem('user_gmail',gmail);
+    localStorage.setItem('user_pass',pass);
+    checkLogin();
+  }, 2500);
 }
-function doLogout(){localStorage.removeItem('isLogged'); location.reload();}
+
+function doLogout(){
+  localStorage.removeItem('isLogged');
+  location.reload();
+}
 </script>
 </body>
-  </html>
+</html>
