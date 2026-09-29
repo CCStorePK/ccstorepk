@@ -2,44 +2,168 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CC Store PK</title>
+<title>STORE PK - Premium Cards</title>
 <style>
-.whatsapp-float {position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.5); z-index: 999;}
+body{margin:0; background:#0d1425; color:white; font-family:Arial,sans-serif;}
+.topbar{background:#080c18; padding:12px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e2a4a;}
+.topbar h2{margin:0; font-size:18px; color:#f5c542;}
+.list{background:#101a31; margin:8px; border-radius:10px; border:1px solid #1e2a4a; overflow:hidden;}
+.row{display:grid; grid-template-columns:40px 80px 1fr 90px 50px 60px 50px; align-items:center; padding:12px 8px; border-bottom:1px solid #1a2747; font-size:12px;}
+.row:last-child{border:none;}
+.badge{background:#222; color:#fff; padding:3px 6px; border-radius:4px; font-size:10px; margin-top:4px; display:inline-block;}
+.price{color:#00ff88; font-weight:bold;}
+.buy{background:#1e3a5f; border:1px solid #2a5a9a; color:white; padding:6px 10px; border-radius:6px; cursor:pointer;}
+.cart{border:1px solid #555; padding:5px 8px; border-radius:5px; background:transparent; color:white;}
+.flag{font-size:20px;}
+.whatsapp-float{position:fixed; bottom:20px; right:20px; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; text-decoration:none; z-index:999; box-shadow:0 4px 15px rgba(0,0,0,0.6);}
+#paymentBox{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; padding:20px; box-sizing:border-box; overflow:auto;}
+.box{background:#111a33; padding:20px; border-radius:15px; border:1px solid #2a3a66; max-width:400px; margin:30px auto;}
+input{width:92%; padding:12px; margin:8px 0; background:#080c18; border:1px solid #2a3a66; color:white; border-radius:8px;}
 </style>
 </head>
-<body style="margin:0; background:#080808; color:white; font-family:sans-serif;">
-<div style="text-align:center; padding:15px; background:black; border-bottom:1px solid #222;"><h2 style="margin:0;">CC STORE PK</h2></div>
+<body>
 
-<div style="background:#111; margin:15px; padding:15px; border-radius:15px; text-align:center; border:1px solid #222;">
-<img src="1790640037797.jpg" style="width:100%; border-radius:12px;">
-<h3>Premium CC - Fresh & Valid</h3>
-<p style="color:#00ff88; font-weight:bold; font-size:22px;">Price: $25</p>
-<button id="shopBtn" onclick="document.getElementById('paymentBox').style.display='block'; this.style.display='none';" style="width:100%; padding:14px; background:white; color:black; border:none; border-radius:10px; font-weight:bold; font-size:16px;">SHOP NOW</button>
+<div class="topbar">
+<span>MENU</span>
+<span>🛒 🛍️</span>
+<span style="background:#222; padding:6px 12px; border-radius:6px;">$ 2.01</span>
+</div>
 
-<!-- STEP 1: PAYMENT DETAILS - ONLY UBL -->
-<div id="paymentBox" style="display:none; text-align:left; background:#000; padding:12px; border-radius:10px; border:1px solid #333; margin-top:15px;">
-<p style="color:#00ff88; font-weight:bold; text-align:center; font-size:18px;">PAYMENT DETAILS</p>
-<div style="background:#1a1a1a; padding:12px; border-radius:8px; line-height:1.8; font-size:15px;">
+<h3 style="text-align:center; color:#f5c542; margin:15px 0;">PREMIUM VIRTUAL CARDS - WORLDWIDE</h3>
+
+<div class="list">
+<!-- USA CARDS -->
+<div class="row">
+<input type="checkbox">
+<div><b style="color:#1a56db;">VISA</b><br>410039<br><span class="badge">BANK</span></div>
+<div><b>DEBIT</b><br>CLASSIC</div>
+<div>09/2029<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
+<div class="flag">🇺🇸</div>
+<div class="price">$20</div>
+<div><button class="buy" onclick="openPay('Visa Debit Classic US 🇺🇸 $20 (Refunded)')">BUY</button></div>
+</div>
+
+<div class="row">
+<input type="checkbox">
+<div><b style="color:#eb001b;">MasterCard</b><br>514783<br><span class="badge">BANK</span></div>
+<div><b>DEBIT</b><br>ENHANCED</div>
+<div>09/2031<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
+<div class="flag">🇺🇸</div>
+<div class="price">$15</div>
+<div><button class="buy" onclick="openPay('MasterCard Enhanced US 🇺🇸 $15 (Refunded)')">BUY</button></div>
+</div>
+
+<div class="row">
+<input type="checkbox">
+<div><b style="color:#eb001b;">MasterCard</b><br>517542<br><span class="badge">BANK</span></div>
+<div><b>DEBIT</b><br>ENHANCED</div>
+<div>03/2029<br>0926-US<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
+<div class="flag">🇺🇸</div>
+<div class="price">$30</div>
+<div><button class="buy" onclick="openPay('MasterCard Enhanced US 🇺🇸 $30')">BUY</button></div>
+</div>
+
+<!-- SAUDI -->
+<div class="row">
+<input type="checkbox">
+<div><b style="color:#1a56db;">VISA</b><br>432653<br><span class="badge">BANK</span></div>
+<div><b>DEBIT</b><br>CLASSIC</div>
+<div>04/2030<br>0926-SA<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
+<div class="flag">🇸🇦</div>
+<div class="price">$25</div>
+<div><button class="buy" onclick="openPay('Visa Classic SAUDI 🇸🇦 $25')">BUY</button></div>
+</div>
+
+<div class="row">
+<input type="checkbox">
+<div><b style="color:#eb001b;">MasterCard</b><br>514783<br><span class="badge">BANK</span></div>
+<div><b>DEBIT</b><br>ENHANCED</div>
+<div>12/2027<br>0926-SA<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
+<div class="flag">🇸🇦</div>
+<div class="price">$25</div>
+<div><button class="buy" onclick="openPay('MasterCard Enhanced SAUDI 🇸🇦 $25')">BUY</button></div>
+</div>
+
+<!-- UAE -->
+<div class="row">
+<input type="checkbox">
+<div><b style="color:#1a56db;">VISA</b><br>434769<br><span class="badge">BANK</span></div>
+<div><b>DEBIT</b><br>CLASSIC</div>
+<div>01/2027<br>0926-AE<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
+<div class="flag">🇦🇪</div>
+<div class="price">$25</div>
+<div><button class="buy" onclick="openPay('Visa Classic UAE 🇦🇪 $25')">BUY</button></div>
+</div>
+
+<div class="row">
+<input type="checkbox">
+<div><b style="color:#eb001b;">MasterCard</b><br>510805<br><span class="badge">BANK</span></div>
+<div><b>DEBIT</b><br>ENHANCED</div>
+<div>12/2027<br>0926-AE<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
+<div class="flag">🇦🇪</div>
+<div class="price">$30</div>
+<div><button class="buy" onclick="openPay('MasterCard Enhanced UAE 🇦🇪 $30')">BUY</button></div>
+</div>
+
+<!-- PAKISTAN -->
+<div class="row">
+<input type="checkbox">
+<div><b style="color:#1a56db;">VISA</b><br>410039<br><span class="badge">BANK</span></div>
+<div><b>DEBIT</b><br>CLASSIC</div>
+<div>09/2029<br>0926-PK<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
+<div class="flag">🇵🇰</div>
+<div class="price">$10</div>
+<div><button class="buy" onclick="openPay('Visa Classic Pakistan 🇵🇰 $10')">BUY</button></div>
+</div>
+
+<div class="row">
+<input type="checkbox">
+<div><b style="color:#eb001b;">MasterCard</b><br>552345<br><span class="badge">BANK</span></div>
+<div><b>DEBIT</b><br>ENHANCED</div>
+<div>03/2028<br>0926-PK<br>Address-5$<br><span style="color:#00ff88;">[REFUND 5 min]</span></div>
+<div class="flag">🇵🇰</div>
+<div class="price">$50</div>
+<div><button class="buy" onclick="openPay('MasterCard Enhanced Pakistan 🇵🇰 $50')">BUY</button></div>
+</div>
+
+</div>
+
+<!-- PAYMENT POPUP - SAME AS YOU WANTED -->
+<div id="paymentBox">
+<div class="box">
+<h3 style="color:#00ff88; text-align:center;">PAYMENT DETAILS</h3>
+<p id="selectedItem" style="text-align:center; color:#f5c542;"></p>
+<div style="background:#080c18; padding:12px; border-radius:8px; line-height:1.8; border:1px solid #2a3a66;">
 Bank: <b>UBL</b><br>
 IBAN: <b>1224390615808</b><br>
 Title: <b>Abdul Rehman</b>
 </div>
-<p style="font-size:13px; color:#aaa; margin-top:10px;">Payment UBL me send karke Transaction ID likho aur Screenshot WhatsApp pe bhejo.</p>
-<input id="trxid" placeholder="Transaction ID likho" style="width:93%; padding:11px; margin-top:8px; background:#111; border:1px solid #333; color:white; border-radius:6px;">
-<button onclick="let t=document.getElementById('trxid').value; if(!t){alert('Pehle Transaction ID likho'); return;} document.getElementById('gmailBox').style.display='block'; document.getElementById('paymentBox').style.display='none';" style="width:100%; padding:13px; background:#25D366; color:white; border:none; border-radius:8px; font-weight:bold; margin-top:10px;">Payment Done - Next</button>
-</div>
-
-<!-- STEP 2: ONLY GMAIL -->
-<div id="gmailBox" style="display:none; text-align:left; background:#000; padding:12px; border-radius:10px; border:1px solid #333; margin-top:15px;">
-<p style="color:#00ff88; font-weight:bold; text-align:center;">FINAL STEP</p>
-<p style="font-size:13px; color:#aaa;">Jis Gmail par CC details chahiye wo likho.</p>
-<input id="gmail" placeholder="Apni Gmail likho" style="width:93%; padding:11px; margin:8px 0; background:#111; border:1px solid #333; color:white; border-radius:6px;">
-<button onclick="let t=document.getElementById('trxid').value; let g=document.getElementById('gmail').value; if(!g){alert('Gmail likho'); return;} window.open('https://wa.me/923012896632?text='+encodeURIComponent('NEW ORDER $25\nUBL IBAN: 1224390615808 Abdul Rehman\nTrx ID: '+t+'\nCustomer Gmail: '+g));" style="width:100%; padding:13px; background:white; color:black; border:none; border-radius:8px; font-weight:bold; margin-top:10px;">SEND TO WHATSAPP</button>
+<p style="font-size:12px; color:#aaa;">Send payment to UBL, upload screenshot and enter Transaction ID.</p>
+<input id="trxid" placeholder="Enter Transaction ID">
+<input type="file" id="ss" style="color:white;">
+<input id="gmail" placeholder="Enter Your Gmail">
+<button onclick="sendOrder()" style="width:100%; padding:13px; background:#25D366; color:white; border:none; border-radius:8px; font-weight:bold; margin-top:10px;">SEND TO WHATSAPP</button>
+<button onclick="document.getElementById('paymentBox').style.display='none'" style="width:100%; padding:10px; background:transparent; color:#aaa; border:1px solid #333; border-radius:8px; margin-top:8px;">Close</button>
 </div>
 </div>
 
-<!-- SIDE WHATSAPP ICON -->
 <a href="https://wa.me/923012896632" class="whatsapp-float">💬</a>
+
+<script>
+let current = "";
+function openPay(name){
+ current = name;
+ document.getElementById('selectedItem').innerText = name;
+ document.getElementById('paymentBox').style.display='block';
+}
+function sendOrder(){
+ let t=document.getElementById('trxid').value;
+ let g=document.getElementById('gmail').value;
+ if(!t || !g){alert('Please enter Transaction ID and Gmail'); return;}
+ let msg = `NEW ORDER\nProduct: ${current}\nBank: UBL\nIBAN: 1224390615808\nTitle: Abdul Rehman\nTrx ID: ${t}\nCustomer Gmail: ${g}\nScreenshot: Attached in chat`;
+ window.open('https://wa.me/923012896632?text='+encodeURIComponent(msg));
+}
+</script>
 
 </body>
 </html>
